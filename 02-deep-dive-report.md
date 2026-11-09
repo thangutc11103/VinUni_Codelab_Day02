@@ -3,7 +3,7 @@
 **Đơn vị thực hiện:** AI Product Engineering — Vin Smart Future  
 **Công ty thành viên phụ trách:** Vinhomes (Khối Vận hành Đô thị & Ban Quản lý Tòa nhà)  
 **Bài toán lựa chọn:** Hệ thống Phân loại & Tự động Định tuyến Sự cố Kỹ thuật Cư dân trên App Vinhomes Resident  
-**Tác giả:** Nguyễn Việt Hoàng (`viethoang`)  
+**Tác giả:** chunhat  
 
 ---
 

@@ -1,6 +1,6 @@
 # 01 — Problem Scan & Quick Assessments (Cá nhân)
 
-**Học viên thực hiện:** Việt Hoàng (viethoang)  
+**Học viên thực hiện:** chunhat  
 **Đơn vị:** AI Product Engineer — Vin Smart Future (Vingroup)  
 **Bài Lab:** Lab 02 — AI Product Scoping  
 

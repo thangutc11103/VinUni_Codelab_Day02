@@ -1,6 +1,6 @@
 # 03 — AI Log & Reflection: Nhật Ký Đồng Hành Cùng Trí Tuệ Nhân Tạo
 
-**Học viên:** Nguyễn Việt Hoàng (`viethoang`)  
+**Học viên:** chunhat  
 **Vai trò giả lập:** AI Product Engineer — Vin Smart Future (Vingroup)  
 **Bài Lab:** Lab 02 — AI Product Scoping  
 **Công cụ AI sử dụng:** Gemini 2.5 Flash / Claude 3.5 Sonnet làm Thought-Partner (Cộng sự tư duy)  
