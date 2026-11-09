@@ -6,7 +6,7 @@
 |---|---|
 | **Họ và tên** | Nguyễn Minh Phúc |
 | **Mã sinh viên** | 2A202603894 |
-| **Nhóm** | |
+| **Nhóm** | 0304 |
 | **Branch cá nhân** | NguyenMinhPhuc |
 | **Ngày** | 09-11-2026 |
 
