@@ -15,7 +15,7 @@ import sys
 from typing import Any
 
 # Standard Model Identifier
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
 
 # ===========================================================================
 # 🛡️ Operational Boundaries to Enforce via System Prompt:
