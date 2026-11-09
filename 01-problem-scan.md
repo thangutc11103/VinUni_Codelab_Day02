@@ -143,9 +143,10 @@ Từ 6 bài toán trên, lựa chọn **Top 3 bài toán** khả thi và có tá
 
 ---
 
-# 🎯 Đề Xuất Bài Toán Trọng Tâm Để Làm Prototype & Báo Cáo Sâu:
-* **Lựa chọn:** **Card #1 — Xanh SM Xử lý sự cố sạc pin / cạn kiệt pin thực địa**.
-* **Lý do lựa chọn:**
-  1. Đây là quy trình nghiệp vụ gắn liền với an toàn vật lý và trải nghiệm khách hàng cốt lõi của Vingroup.
-  2. Ranh giới vận hành (**Operational Boundary**) cực kỳ rõ ràng và cấp thiết: Nguy cơ xe cạn pin giữa đường gây tắc đường, do đó khi pin `< 5%` bắt buộc phải có cơ chế điều xe cứu hộ thay vì ép xe chạy tiếp tới trạm sạc xa.
-  3. Có cơ chế **Human-in-the-loop (`[DRAFT_ONLY]`)** giúp kiểm soát rủi ro hoàn toàn trước khi thông tin được gửi tới tài xế.
+# 🎯 Đề Xuất Bài Toán Trọng Tâm Để Làm Báo Cáo Chuyên Sâu (Deep-Dive):
+* **Lựa chọn chính thức:** **Vinhomes — Hệ thống Phân loại & Tự động Định tuyến Sự cố Kỹ thuật Cư dân (Resident Incident Triage & Auto-Routing)**.
+* **Lý do lựa chọn từ góc nhìn Vận hành & Sản phẩm (Product Perspective):**
+  1. **Nghiệp vụ gần gũi, tính thực tế cao:** Bài toán giải quyết nỗi đau trực tiếp của hàng trăm nghìn cư dân và giảm tải cho ban quản lý các đại đô thị Vinhomes (Ocean Park, Smart City, Grand Park).
+  2. **Quy trình tối ưu hóa rõ ràng:** Thay thế khâu đọc tin nhắn tự do và gõ tay ERP (15 phút) bằng mô hình kết hợp: **Rule-based (cho an toàn khẩn cấp P0)** + **LLM Feature (trích xuất thông tin & phân loại ticket)**, rút ngắn thời gian xử lý xuống dưới 15 giây.
+  3. **Kiểm soát rủi ro hoàn hảo:** Sự cố khẩn cấp (cháy, rò gas) được bảo vệ bằng Rule độc lập; 100% ticket đều có cơ chế Human-in-the-loop (HITL) để kỹ thuật viên bấm xác nhận; có cơ chế Fallback an toàn khi độ tin cậy < 85%.
+* **Bài toán kỹ thuật bổ trợ (Prompt Boundary Prototype):** Giữ bản mẫu kiểm thử an toàn ranh giới Xanh SM trong file `prompt_prototype.py` để chứng minh năng lực thiết lập rào chắn bảo vệ mô hình không bị tấn công.
