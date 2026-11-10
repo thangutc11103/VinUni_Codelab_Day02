@@ -1,3 +1,13 @@
+**Lab 02: AI Product Scoping (Vin Smart Future)**
+
+| Thông tin | |
+|---|---|
+| **Họ và tên** | Nguyễn Việt Hoàng |
+| **Mã sinh viên** | 2A202604104 |
+| **Nhóm** | 0304 |
+| **Branch cá nhân** | viethoang |
+| **Ngày** | 10-11-2026 |
+
 # Phase 1 --- SCAN
 
 Mục tiêu: Xác định các vấn đề thực tế trong sinh hoạt có khả năng cải thiện bằng AI. Ưu tiên những vấn đề có người gặp phải thường xuyên, quy trình hiện tại có điểm nghẽn rõ ràng và có thể đo lường kết quả.
