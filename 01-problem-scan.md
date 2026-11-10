@@ -1,152 +1,85 @@
-# 01 — Problem Scan & Quick Assessments (Cá nhân)
+# Phase 1 --- SCAN
 
-**Học viên thực hiện:** Việt Hoàng (viethoang)  
-**Đơn vị:** AI Product Engineer — Vin Smart Future (Vingroup)  
-**Bài Lab:** Lab 02 — AI Product Scoping  
+Mục tiêu: Xác định các vấn đề thực tế trong sinh hoạt có khả năng cải thiện bằng AI. Ưu tiên những vấn đề có người gặp phải thường xuyên, quy trình hiện tại có điểm nghẽn rõ ràng và có thể đo lường kết quả.
 
----
+### Các vấn đề được lựa chọn
 
-# 🔍 Phase 1 — SCAN: Quét Cơ Hội Qua 4 Lenses
-
-Sử dụng **4 Lenses** (*Lặp lại, Tốn thời gian, AI có thể tốt hơn, Pain từ người khác*) để quét qua các mảng vận hành của các công ty thành viên thuộc Tập đoàn Vingroup.
-
-### 📋 Bảng Quét Cơ Hội Bài Toán Vận Hành (Scan Opportunities):
-
-| # | Đơn vị thành viên (Subsidiary) | Lens áp dụng | Mô tả ngắn bài toán & Điểm nghẽn vận hành (Pain Point) |
-|---|--------------------------------|--------------|---------------------------------------------------------|
-| 1 | **Xanh SM (GSM)** | **Tốn thời gian** (Time-consuming) | **Xử lý sự cố sạc pin / cạn pin thực địa:** Tài xế gọi tổng đài báo xe sắp hết pin (< 5%) hoặc trụ sạc dự kiến bị lỗi. Điều phối viên phải tra cứu bản đồ vị trí, mở hệ thống tìm trụ sạc VinFast còn trống phù hợp chuẩn sạc rồi soạn tin hướng dẫn thủ công (mất 15–20 phút/sự cố). |
-| 2 | **VinFast** | **AI có thể tốt hơn** (AI-upgrade) | **Chẩn đoán sơ bộ lỗi xe từ mô tả tiếng Việt tự nhiên:** Khách hàng báo hỏng trên ứng dụng VinFast bằng ngôn ngữ đời thường (ví dụ: *"xe đi qua gờ giảm tốc kêu cụp cụp ở gầm trước bên lái"*). Hiện tại nhân viên CSKH chưa có chuyên môn kỹ thuật sâu phải gọi hỏi lại nhiều lần để phân loại mã lỗi trước khi điều phối về xưởng dịch vụ. |
-| 3 | **Vinhomes** | **Lặp lại** (Repetitive) | **Phân loại & điều hướng phản ánh kỹ thuật cư dân:** Hằng ngày có hàng nghìn phản ánh (mất nước, chập điện, hỏng đèn hành lang, tiếng ồn) gửi về App Vinhomes Resident. Nhân viên ban quản lý phải đọc từng tin nhắn để gán thủ công cho tổ kỹ thuật hoặc tổ an ninh của từng phân khu. |
-| 4 | **Vinmec** | **Pain từ người khác** (Stakeholder Pain) | **Soạn thảo tóm tắt bệnh án xuất viện (Discharge Summary):** Bác sĩ điều trị mất 20–30 phút/bệnh nhân để tổng hợp lịch sử khám, kết quả xét nghiệm, chẩn đoán hình ảnh thành văn bản tóm tắt cho bệnh nhân. Bác sĩ phàn nàn vì quá tải thủ tục hành chính, giảm thời gian khám chữa bệnh trực tiếp. |
-| 5 | **Vinpearl / VinWonders** | **Tốn thời gian** (Time-consuming) | **Trích xuất thông tin đặt phòng đoàn (Group Booking) từ email đại lý:** Các đại lý du lịch (OTA, tour agency) gửi email yêu cầu đặt đoàn với định dạng tự do, danh sách phòng thay đổi nhiều lần. Nhân viên đặt phòng phải đối chiếu thủ công chuỗi email vào hệ thống Opera PMS mất 30–45 phút/đoàn. |
-| 6 | **VinFast** | **Lặp lại** (Repetitive) | **Đối chiếu hóa đơn sạc điện đối tác nhượng quyền:** So khớp tự động giữa dữ liệu đo đếm điện năng từ trụ sạc (telemetry logs) với hóa đơn thanh toán đối tác hàng tuần để phát hiện sai lệch chỉ số điện năng tiêu thụ. |
+| STT | Bài toán | Người gặp vấn đề | Vấn đề cốt lõi |
+|---|---|---|---|
+| 1 | Dự đoán thời gian di chuyển theo tuyến đường và thời điểm xuất phát | Sinh viên, nhân viên văn phòng, người thường xuyên di chuyển | Thời gian đến thực tế thường khác với dự kiến; người dùng khó chủ động chọn thời điểm xuất phát |
+| 2 | Phát hiện lỗ hổng kiến thức trong quá trình học tập | Người tự học, sinh viên, người học trực tuyến | Người học biết mình làm sai nhưng không biết đang thiếu kiến thức nền tảng hoặc kỹ năng nào |
 
 ---
 
-# 🃏 Phase 2 — QUICK-ASSESS: 3 Thẻ Bài Toán Tiềm Năng (Quick Problem Cards)
+## Phase 2 --- QUICK-ASSESS
 
-Từ 6 bài toán trên, lựa chọn **Top 3 bài toán** khả thi và có tác động kinh doanh cao nhất để tiến hành đánh giá nhanh.
+### Bài toán 1 --- Dự đoán thời gian di chuyển theo tuyến đường và thời điểm xuất phát
 
----
-
-### 📇 QUICK PROBLEM CARD #1: Xanh SM — Xử lý sự cố sạc pin / cạn kiệt pin thực địa
-
-```text
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #1                                                            │
-│                                                                                  │
-│ Bài toán (1 câu): Hỗ trợ điều phối viên Xanh SM tra cứu trạm sạc khả dụng, ra    │
-│ quyết định điều xe sạc lưu động hoặc soạn chỉ dẫn trạm sạc gần nhất cho tài xế. │
-│ Công ty thành viên: [x] Xanh SM (GSM)                                            │
-│                                                                                  │
-│ Ai đang đau (Actor)?                                                             │
-│ - Điều phối viên (Dispatcher): Quá tải vào giờ cao điểm, áp lực xử lý tức thì.   │
-│ - Tài xế Xanh SM: Lo lắng xe cạn pin giữa đường, nguy cơ tắc đường và hủy cuốc.  │
-│                                                                                  │
-│ Workflow thủ công hiện tại (5 bước):                                             │
-│   1. Nhận cuộc gọi khẩn cấp từ tài xế qua hệ thống tổng đài                      │
-│   ──> 2. Mở bản đồ định vị tra cứu tọa độ xe và phần trăm pin hiện tại           │
-│   ──> 3. Mở cổng thông tin trạm sạc VinFast tra cứu trụ sạc tương thích còn trống │
-│   ──> 4. Soạn thảo tin nhắn hướng dẫn đường đi chi tiết và gửi qua Driver App    │
-│   ──> 5. (Nếu pin < 5%) Liên hệ tổ xe cứu hộ sạc pin lưu động đến ứng cứu         │
-│                                                                                  │
-│ Bước nào tốn thời gian / dễ lỗi nhất?                                            │
-│ - Bước 3 và Bước 4: Mất 10–12 phút/lượt. Dễ lỗi nếu điều xe đến trạm đã kín chỗ  │
-│   hoặc trạm không có cổng sạc công suất phù hợp dòng xe (VF5 / VF8).             │
-│ AI có thể nhảy vào hỗ trợ ở bước nào?                                            │
-│ - Bước 2, 3, 4: Tự động gom dữ liệu GPS + pin + trạm sạc, LLM tự động soạn thảo │
-│   tin nhắn chỉ dẫn dạng nháp ([DRAFT_ONLY]) cho điều phối viên duyệt 1-click.    │
-│                                                                                  │
-│ Đo thành công bằng gì (Metric có số)?                                            │
-│ - Thời gian xử lý trung bình một sự cố giảm từ 15 phút ──> dưới 3 phút.          │
-│ - Tỉ lệ chỉ dẫn chính xác loại cổng sạc và trạm khả dụng đạt >= 98%.             │
-│                                                                                  │
-│ Quick Architecture: [x] LLM Feature (kết hợp API trạm sạc & Human-in-the-loop)   │
-└──────────────────────────────────────────────────────────────────────────────────┘
-```
+| Field | Nội dung |
+|---|---|
+| **Bài toán (1 câu)** | Dự đoán thời gian di chuyển thực tế trên một tuyến đường dựa vào thời điểm xuất phát và điều kiện giao thông, giúp người dùng chủ động sắp xếp lịch trình. |
+| **Đối tượng (Actor)** | Sinh viên, nhân viên văn phòng và người thường xuyên di chuyển trên các tuyến đường cố định. |
+| **Workflow hiện tại** | 1. Người dùng xác định điểm đi và điểm đến. 2. Tra cứu thời gian di chuyển trên ứng dụng bản đồ. 3. Chọn tuyến đường và thời điểm xuất phát. 4. Di chuyển và tự điều chỉnh nếu gặp ùn tắc. |
+| **Điểm nghẽn (Bottleneck)** | Thời gian di chuyển thay đổi theo khung giờ, mật độ giao thông, thời tiết và sự cố trên đường. Người dùng khó ước lượng chính xác thời gian cần thiết, đặc biệt khi phải di chuyển vào giờ cao điểm. |
+| **AI can thiệp** | Phân tích dữ liệu lịch sử di chuyển kết hợp với thời điểm, tuyến đường và dữ liệu giao thông để dự đoán thời gian di chuyển. Hệ thống đưa ra thời gian ước lượng kèm mức độ tin cậy thay vì chỉ hiển thị một con số cố định. |
+| **Metric đánh giá** | - MAE giảm tối thiểu 15% so với baseline.<br>- Tỷ lệ đến đúng giờ tăng tối thiểu 10 điểm phần trăm.<br>- Theo dõi sai số dự đoán theo từng khung giờ và loại tuyến đường. |
+| **Baseline cần có** | Thời gian di chuyển thực tế, thời điểm xuất phát, tuyến đường và dữ liệu giao thông tương ứng. |
+| **Phạm vi MVP** | Thử nghiệm trên một khu vực địa lý giới hạn, một nhóm tuyến đường và một phương tiện di chuyển. Chưa xây dựng hệ thống điều hướng hoặc tự động thay đổi tuyến đường. |
+| **Hướng triển khai** | Machine Learning dự đoán thời gian di chuyển từ dữ liệu lịch sử và các yếu tố đầu vào có liên quan. |
 
 ---
 
-### 📇 QUICK PROBLEM CARD #2: VinFast — Trợ lý phân loại lỗi kỹ thuật xe điện ban đầu
+### Bài toán 2 --- Phát hiện lỗ hổng kiến thức trong quá trình học tập
 
-```text
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #2                                                            │
-│                                                                                  │
-│ Bài toán (1 câu): Phân tích mô tả triệu chứng bất thường bằng tiếng Việt tự nhiên │
-│ của chủ xe điện trên App VinFast để gợi ý phân loại mã lỗi và hướng dẫn ban đầu.  │
-│ Công ty thành viên: [x] VinFast                                                  │
-│                                                                                  │
-│ Ai đang đau (Actor)?                                                             │
-│ - Chủ xe điện: Hoang mang khi xe phát ra tiếng động lạ hoặc cảnh báo taplo.      │
-│ - Nhân viên CSKH / Cố vấn dịch vụ xưởng: Mất nhiều thời gian gặng hỏi khách để  │
-│   hiểu triệu chứng kỹ thuật, dẫn đến đặt lịch sai chuyên môn xưởng.              │
-│                                                                                  │
-│ Workflow thủ công hiện tại (4 bước):                                             │
-│   1. Chủ xe nhập mô tả văn bản hoặc gửi ghi âm qua tính năng hỗ trợ App          │
-│   ──> 2. Nhân viên CSKH đọc mô tả, gọi điện lại cho khách gặng hỏi chi tiết     │
-│   ──> 3. Nhân viên tra sổ tay kỹ thuật để dự đoán cụm linh kiện bị lỗi           │
-│   ──> 4. Hướng dẫn khách tự kiểm tra cơ bản hoặc đặt lịch xưởng phù hợp          │
-│                                                                                  │
-│ Bước nào tốn thời gian / dễ lỗi nhất?                                            │
-│ - Bước 2 và Bước 3: Mất 15–20 phút/lượt. Dễ sai lệch do khách mô tả cảm tính    │
-│   (tiếng kêu lọc cọc, ù tai, giật cục) mà CSKH không có chuyên môn thợ máy.      │
-│ AI có thể nhảy vào hỗ trợ ở bước nào?                                            │
-│ - Bước 2 & 3: LLM phân tích ngôn ngữ tự nhiên, trích xuất triệu chứng, đối chiếu │
-│   với cơ sở tri thức lỗi VinFast (RAG), sinh bản tóm tắt kỹ thuật sơ bộ.         │
-│                                                                                  │
-│ Đo thành công bằng gì (Metric có số)?                                            │
-│ - Thời gian phân loại sơ bộ giảm từ 20 phút ──> dưới 30 giây.                    │
-│ - Độ chính xác định tuyến đúng chuyên khoa xưởng (gầm, pin, phần mềm) >= 90%.   │
-│                                                                                  │
-│ Quick Architecture: [x] LLM Feature (RAG tri thức kỹ thuật + Human review)       │
-└──────────────────────────────────────────────────────────────────────────────────┘
-```
+| Field | Nội dung |
+|---|---|
+| **Bài toán (1 câu)** | Phân tích quá trình làm bài của người học để xác định những kiến thức hoặc kỹ năng nền tảng mà họ chưa nắm vững, từ đó đề xuất nội dung cần ôn tập. |
+| **Đối tượng (Actor)** | Sinh viên, người tự học và người học trên các nền tảng trực tuyến. |
+| **Workflow hiện tại** | 1. Người học tiếp nhận kiến thức mới. 2. Làm bài tập hoặc bài kiểm tra. 3. Xem kết quả đúng/sai và điểm số. 4. Tự tìm tài liệu để ôn tập. 5. Tiếp tục học nội dung tiếp theo. |
+| **Điểm nghẽn (Bottleneck)** | Kết quả đúng/sai chỉ phản ánh biểu hiện ở một câu hỏi, chưa chỉ ra nguyên nhân người học làm sai. Điểm số tổng thể cũng không thể hiện rõ từng kiến thức thành phần mà người học đang yếu. |
+| **AI can thiệp** | Phân tích lịch sử trả lời, mức độ khó của câu hỏi và mối quan hệ giữa các kiến thức tiên quyết để ước lượng mức độ nắm vững của người học. Hệ thống xác định các nội dung có khả năng bị hổng và đề xuất bài tập kiểm tra hoặc tài liệu ôn tập phù hợp. |
+| **Metric đánh giá** | - F1-score tối thiểu 0.80 trên tập dữ liệu được chuyên gia gán nhãn.<br>- Thời gian xác định nội dung cần ôn tập giảm tối thiểu 30%.<br>- Đo mức cải thiện kết quả học tập trước và sau khi sử dụng hệ thống. |
+| **Baseline cần có** | Lịch sử làm bài, kết quả theo từng chủ đề, ngân hàng câu hỏi có nhãn kiến thức và đánh giá của giảng viên hoặc người có chuyên môn. |
+| **Phạm vi MVP** | Chỉ triển khai trên một môn học hoặc một nhóm kiến thức có cấu trúc tiên quyết rõ ràng. Hệ thống đưa ra dự đoán theo từng kỹ năng, không đánh giá toàn diện năng lực người học. |
+| **Hướng triển khai** | Knowledge Tracing và mô hình hóa mức độ nắm vững kiến thức theo thời gian. Có thể khảo sát các phương pháp như BKT, IRT hoặc DKT tùy theo dữ liệu. |
 
 ---
 
-### 📇 QUICK PROBLEM CARD #3: Vinhomes — Phân loại & Điều hướng sự cố cư dân thông minh
+## Phase 3 --- QUICK COMPARISON
 
-```text
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #3                                                            │
-│                                                                                  │
-│ Bài toán (1 câu): Tự động trích xuất thông tin tòa nhà/căn hộ và phân loại nội   │
-│ dung khiếu nại/sự cố của cư dân trên App Vinhomes Resident đến đúng ban phụ trách│
-│ Công ty thành viên: [x] Vinhomes                                                 │
-│                                                                                  │
-│ Ai đang đau (Actor)?                                                             │
-│ - Cư dân Vinhomes: Bực bội vì phản ánh mất 4–8 tiếng mới được tiếp nhận xử lý.  │
-│ - Trực ban BQL (Building Operation Desk): Mỗi ca nhận hàng trăm tin nhắn hỗn loạn│
-│   phải đọc và chuyển tiếp thủ công sang các tổ Kỹ thuật, Vệ sinh, An ninh.       │
-│                                                                                  │
-│ Workflow thủ công hiện tại (4 bước):                                             │
-│   1. Cư dân gửi phản ánh tự do qua ứng dụng Vinhomes Resident                    │
-│   ──> 2. Nhân viên tiếp nhận đọc nội dung, xác định tòa/căn hộ và tính chất việc │
-│   ──> 3. Đăng nhập hệ thống điều phối nội bộ tạo Ticket công việc tương ứng      │
-│   ──> 4. Gọi bộ đàm hoặc gửi thông báo đến trưởng nhóm kỹ thuật khu vực          │
-│                                                                                  │
-│ Bước nào tốn thời gian / dễ lỗi nhất?                                            │
-│ - Bước 2 và Bước 3: Mất 8–10 phút/ticket, dễ nhầm lẫn giữa tổ kỹ thuật điện nước │
-│   với bảo dưỡng hạ tầng chung; giờ cao điểm bị dồn ứ hàng trăm phản ánh.        │
-│ AI có thể nhảy vào hỗ trợ ở bước nào?                                            │
-│ - Bước 2 & 3: LLM trích xuất thực thể (Căn hộ, Vấn đề, Mức độ khẩn cấp) và xuất │
-│   ra định dạng JSON để hệ thống tự động gán Ticket ngay tức thì.                 │
-│                                                                                  │
-│ Đo thành công bằng gì (Metric có số)?                                            │
-│ - Tốc độ tiếp nhận và tạo ticket giảm từ 10 phút ──> dưới 10 giây (gần real-time)│
-│ - Tỉ lệ phân loại đúng phòng ban xử lý đạt >= 95%.                               │
-│                                                                                  │
-│ Quick Architecture: [x] Rule + LLM Classifier (Rule lọc khẩn cấp + LLM trích xuất)│
-└──────────────────────────────────────────────────────────────────────────────────┘
-```
+| Tiêu chí | Bài toán 1: Dự đoán thời gian di chuyển | Bài toán 2: Phát hiện lỗ hổng kiến thức |
+|---|---|---|
+| **Mức độ thường xuyên** | Cao | Cao |
+| **Mức độ rõ ràng của vấn đề** | Khá rõ | Rõ |
+| **Khả năng thu thập dữ liệu** | Phụ thuộc dữ liệu giao thông và lịch sử di chuyển | Phụ thuộc ngân hàng câu hỏi và lịch sử làm bài |
+| **Khả năng xây dựng MVP** | Trung bình | Khá cao nếu giới hạn một môn học |
+| **Khả năng đánh giá định lượng** | Cao | Cao nếu có nhãn đánh giá đáng tin cậy |
+| **Hướng AI phù hợp** | Machine Learning / Time Series | Knowledge Tracing / Machine Learning |
 
 ---
 
-# 🎯 Đề Xuất Bài Toán Trọng Tâm Để Làm Báo Cáo Chuyên Sâu (Deep-Dive):
-* **Lựa chọn chính thức:** **Vinhomes — Hệ thống Phân loại & Tự động Định tuyến Sự cố Kỹ thuật Cư dân (Resident Incident Triage & Auto-Routing)**.
-* **Lý do lựa chọn từ góc nhìn Vận hành & Sản phẩm (Product Perspective):**
-  1. **Nghiệp vụ gần gũi, tính thực tế cao:** Bài toán giải quyết nỗi đau trực tiếp của hàng trăm nghìn cư dân và giảm tải cho ban quản lý các đại đô thị Vinhomes (Ocean Park, Smart City, Grand Park).
-  2. **Quy trình tối ưu hóa rõ ràng:** Thay thế khâu đọc tin nhắn tự do và gõ tay ERP (15 phút) bằng mô hình kết hợp: **Rule-based (cho an toàn khẩn cấp P0)** + **LLM Feature (trích xuất thông tin & phân loại ticket)**, rút ngắn thời gian xử lý xuống dưới 15 giây.
-  3. **Kiểm soát rủi ro hoàn hảo:** Sự cố khẩn cấp (cháy, rò gas) được bảo vệ bằng Rule độc lập; 100% ticket đều có cơ chế Human-in-the-loop (HITL) để kỹ thuật viên bấm xác nhận; có cơ chế Fallback an toàn khi độ tin cậy < 85%.
-* **Bài toán kỹ thuật bổ trợ (Prompt Boundary Prototype):** Giữ bản mẫu kiểm thử an toàn ranh giới Xanh SM trong file `prompt_prototype.py` để chứng minh năng lực thiết lập rào chắn bảo vệ mô hình không bị tấn công.
+## Phase 4 --- INITIAL RECOMMENDATION
+
+### Bài toán được ưu tiên: Phát hiện lỗ hổng kiến thức trong quá trình học tập
+
+**Lý do lựa chọn:**
+- Có thể giới hạn phạm vi thử nghiệm trong một môn học hoặc một nhóm kiến thức cụ thể.
+- Có thể xây dựng tập dữ liệu từ ngân hàng câu hỏi, lịch sử làm bài và nhãn đánh giá của người có chuyên môn.
+- Có các hướng nghiên cứu và phương pháp định lượng để so sánh, chẳng hạn BKT, IRT và DKT.
+- Kết quả đầu ra có thể được đánh giá bằng cách đối chiếu dự đoán của hệ thống với đánh giá chuyên gia và mức tiến bộ thực tế của người học.
+
+**Điều kiện cần xác minh trước khi triển khai:**
+- Có đủ câu hỏi được gắn nhãn theo từng kỹ năng hoặc kiến thức thành phần.
+- Có thể xác định mối quan hệ tiên quyết giữa các kiến thức.
+- Có dữ liệu lịch sử làm bài đủ để mô hình hóa quá trình học, thay vì chỉ dựa trên một lần kiểm tra.
+- Có người có chuyên môn tham gia đánh giá độ chính xác của kết quả chẩn đoán.
+
+### Bài toán dự phòng: Dự đoán thời gian di chuyển
+
+Bài toán này vẫn có tiềm năng, nhưng cần xác minh khả năng tiếp cận dữ liệu thời gian di chuyển thực tế và dữ liệu giao thông. Nếu không có dữ liệu đủ tin cậy, việc đánh giá mô hình sẽ khó thuyết phục.
+
+---
+
+## Kết luận
+
+Hai bài toán đều có thể phát triển thành sản phẩm AI ở quy mô nhỏ. Tuy nhiên, cần xác minh dữ liệu và hành vi thực tế của người dùng trước khi quyết định xây dựng mô hình. Việc lựa chọn AI chỉ có ý nghĩa khi mô hình giải quyết được điểm nghẽn cụ thể và tạo ra kết quả tốt hơn phương pháp hiện tại.
